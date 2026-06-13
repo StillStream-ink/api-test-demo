@@ -46,7 +46,8 @@ pytest test_all.py -v --html=report.html
 
 📊 测试报告效果
 执行完成后自动生成可视化测试报告，展示完整的测试结果统计
-![接口测试报告截图](https://github.com/StillStream-ink/api-test-demo/raw/main/report.png)
+![接口测试报告截图](https://raw.githubusercontent.com/StillStream-ink/api-test-demo/main/report.png?t=20260613)
+
 
 ## Web 自动化测试
 
