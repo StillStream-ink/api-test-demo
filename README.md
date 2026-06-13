@@ -42,12 +42,11 @@ api_test/
 pip install pytest requests
 
 # 2. 执行所有测试用例并生成报告
-![接口测试报告截图](report.png)
+pytest test_all.py -v --html=report.html
 
 📊 测试报告效果
 执行完成后自动生成可视化测试报告，展示完整的测试结果统计
-[<img width="2085" height="1098" alt="image" src="https://github.com/user-attachments/assets/6bfb9442-f1e5-4d0f-9db6-552428024011" />](https://github.com/StillStream-ink/api-test-demo/blob/main/report.png)
-
+![接口测试报告截图](report.png)
 
 ## Web 自动化测试
 
