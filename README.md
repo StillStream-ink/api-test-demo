@@ -1,0 +1,50 @@
+# 接口自动化测试项目（API Test Demo）
+基于 Python 实现的企业级接口自动化测试框架，可批量执行接口用例并自动生成可视化测试报告。
+
+---
+
+## 🛠️ 技术栈
+| 技术/工具 | 用途 |
+|---------|------|
+| Python 3.x | 核心开发语言 |
+| Pytest | 测试用例管理、执行框架 |
+| Requests | 接口请求封装 |
+| HTMLTestRunner | 自动化生成可视化测试报告 |
+| Git + GitHub | 版本控制与项目托管 |
+
+---
+
+## 📁 项目结构
+api_test/
+├── test_case/ # 测试用例文件夹
+│ └── test_api.py # 接口测试用例
+├── report/ # 测试报告输出文件夹
+│ └── report.html # 自动生成的 HTML 可视化报告
+├── common/ # 公共方法封装
+└── requirements.txt # 项目依赖
+
+---
+
+## ✨ 实现功能
+1. 封装 GET/POST 请求方法，统一处理接口请求
+2. 支持批量执行测试用例，自动统计用例通过率
+3. 断言校验接口返回状态码、响应数据正确性
+4. 执行完成自动生成HTML可视化测试报告，包含：
+   - 用例执行总数、通过数、失败数
+   - 每个用例的请求参数、响应结果
+   - 失败用例的错误详情与定位
+
+---
+
+## 🚀 运行方式
+```bash
+# 1. 安装项目依赖
+pip install pytest requests
+
+# 2. 执行所有测试用例并生成报告
+pytest test_case/test_api.py --html=report/report.html
+
+📊 测试报告效果
+执行完成后自动生成可视化测试报告，展示完整的测试结果统计
+<img width="2085" height="1098" alt="image" src="https://github.com/user-attachments/assets/6bfb9442-f1e5-4d0f-9db6-552428024011" />
+
