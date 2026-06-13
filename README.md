@@ -76,7 +76,6 @@ pytest test_saucedemo_pytest.py -v --html=web_report.html
 
 项目总结
 接口自动化：覆盖 REST API 的 CRUD 操作，生成 HTML 报告
-
 Web 自动化：模拟真实用户购物流程，验证核心业务路径
 
 
