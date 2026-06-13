@@ -48,3 +48,35 @@ pytest test_case/test_api.py --html=report/report.html
 执行完成后自动生成可视化测试报告，展示完整的测试结果统计
 [<img width="2085" height="1098" alt="image" src="https://github.com/user-attachments/assets/6bfb9442-f1e5-4d0f-9db6-552428024011" />](https://github.com/StillStream-ink/api-test-demo/blob/main/report.png)
 
+
+## Web 自动化测试
+
+对 [SauceDemo](https://www.saucedemo.com) 电商网站进行完整购物流程自动化测试。
+
+### 测试场景
+- 登录（标准用户 `standard_user`）
+- 添加商品到购物车
+- 进入购物车并结算
+- 填写收货信息
+- 完成订单并断言成功
+
+### 技术栈
+- Python + Playwright + pytest
+
+### 运行方式
+```bash
+# 安装 Playwright 浏览器（首次）
+playwright install chromium
+
+# 运行 Web 自动化测试
+pytest test_saucedemo_pytest.py -v --html=web_report.html
+
+执行效果截图
+![订单成功截图](saucedemo_success.png)
+
+项目总结
+接口自动化：覆盖 REST API 的 CRUD 操作，生成 HTML 报告
+
+Web 自动化：模拟真实用户购物流程，验证核心业务路径
+
+
