@@ -70,6 +70,10 @@ playwright install chromium
 
 # 运行 Web 自动化测试
 pytest test_saucedemo_pytest.py -v --html=web_report.html
+````
+
+# 运行 Web 自动化测试
+pytest test_saucedemo_pytest.py -v --html=web_report.html
 
 执行效果截图
 ![订单成功截图](saucedemo_success.png)
