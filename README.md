@@ -42,7 +42,7 @@ api_test/
 pip install pytest requests
 
 # 2. 执行所有测试用例并生成报告
-pytest test_case/test_api.py --html=report/report.html
+![接口测试报告截图](report.png)
 
 📊 测试报告效果
 执行完成后自动生成可视化测试报告，展示完整的测试结果统计
