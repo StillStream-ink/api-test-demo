@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 
 def test_saucedemo():
     with sync_playwright() as p:
-        browser = p.chromium.launch(channel="msedge", headless=False)
+        browser = p.chromium.launch(channel="msedge", headless=True)
         page = browser.new_page()
         
         print("1. 打开登录页")

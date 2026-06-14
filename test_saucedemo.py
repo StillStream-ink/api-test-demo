@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 def test_saucedemo():
     with sync_playwright() as p:
         # 仍然使用本地的 Edge 浏览器
-        browser = p.chromium.launch(channel="msedge", headless=False)
+        browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         
         # 1. 打开登录页
