@@ -4,8 +4,7 @@ import pytest
 # 参数化测试：测试获取多个不同的单个帖子
 @pytest.mark.parametrize("post_id", [1, 2, 3])
 def test_get_single_post(post_id):
-    response = requests.get(f"https://jsonplaceholder.typicode.com/posts/{post_id}"，
-                             timeout=5)
+    response = requests.get(f"https://jsonplaceholder.typicode.com/posts/{post_id}")
     assert response.status_code == 200
     data = response.json()
     assert data["id"] == post_id
