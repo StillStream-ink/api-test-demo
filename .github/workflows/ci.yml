@@ -1,0 +1,48 @@
+# 这份文件位于：.github/workflows/ci.yml
+name: Python API and Web Test CI
+
+# 1. 触发事件：当代码被推送到 main 分支时
+on:
+  push:
+    branches: [ "main" ]
+  # 可选，让你也能在 GitHub 网页上手动启动
+  workflow_dispatch:
+
+# 2. 要执行的任务
+jobs:
+  test:
+    # 运行在最新的 Ubuntu 虚拟环境中[reference:8]
+    runs-on: ubuntu-latest
+
+    # 3. 任务的执行步骤
+    steps:
+    # 步骤 1：拉取你的代码到虚拟电脑里[reference:9]
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # 步骤 2：设置 Python 环境（版本3.13）
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        cache: 'pip' # 开启pip缓存，下次跑得更快[reference:10]
+
+    # 步骤 3：安装依赖
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest requests pytest-playwright pytest-html
+        # 关键！安装 Playwright 的浏览器（CI环境需要这一步）
+        playwright install --with-deps chromium
+
+    # 步骤 4：运行所有 pytest 测试（接口+Web），并生成HTML报告
+    - name: Run tests with pytest
+      run: |
+        pytest . -v --html=report.html --self-contained-html
+
+    # 步骤 5：上传HTML报告，这样你就能在网页上查看和下载了[reference:11]
+    - name: Upload test report
+      uses: actions/upload-artifact@v4
+      with:
+        name: pytest-report
+        path: report.html
